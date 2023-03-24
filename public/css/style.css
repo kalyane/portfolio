@@ -1,0 +1,92 @@
+@font-face {
+    font-family: Lato-Thin;
+    src: url(/static/fonts/Lato-Thin.ttf);
+}
+
+@font-face {
+    font-family: Lato-Light;
+    src: url(/static/fonts/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: Lato-Regular;
+    src: url(/static/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: Lato-Bold;
+    src: url(/static/fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: Lato-Black;
+    src: url(/static/fonts/Lato-Black.ttf);
+}
+
+@font-face {
+    font-family: RobotoMono-Regular;
+    src: url(/static/fonts/RobotoMono-Regular.ttf);
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Lato-Regular;
+}
+
+body,
+html
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#playCanvas 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3E3E42;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#loading  p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #B15328;
+    margin: 20px;
+}
+
+.loading-animation {
+    border: 16px solid #C4C4C4;
+    border-top: 16px solid #B15328;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,44 @@
+doctype html 
+html 
+    head 
+        title Kalyane - Portfolio
+        link(rel="stylesheet" href="/static/css/style.css")
+        //link(rel="icon" type="image/x-icon" href="/static/images/favicon.ico")
+        link(rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.0/css/all.css")
+
+        script(type="importmap").
+            {
+                "imports": {
+                    "three": "https://cdn.skypack.dev/three@0.139.2/node_modules/three/build/three.module",
+                    "three/": "https://cdn.skypack.dev/three@0.139.2/",      
+                    "dat.gui": "https://cdn.skypack.dev/dat.gui"
+                }
+            }
+    body 
+        #loading
+            .loading-animation 
+            p Loading
+        canvas#playCanvas 
+
+    script(src="/static/bundles/client_bundle.js")
+
+    script.
+        let loaded = false;
+        let ready = false;
+
+        window.addEventListener("load", function() {
+            loaded = true;
+            checkLoading();
+        });
+
+        window.experience.on('ready', function() {
+            ready = true;
+            checkLoading();
+        });
+
+        function checkLoading() {
+            if (loaded && ready) {
+                const loading = document.querySelector("#loading");
+                loading.style.display = "none";
+            }
+        }
